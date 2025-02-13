@@ -1,5 +1,6 @@
+import Lottie from "lottie-react";
 import { useState, useEffect } from "react";
-
+import animationData from "./assets/animate/Animation-14F.json";
 const pages = [
   {
     type: "cover",
@@ -38,6 +39,10 @@ const pages = [
         de felicidad y amor eterno. 💘
       </p>
     ),
+  },
+  {
+    type: "text",
+    content: <Lottie animationData={animationData} loop={true} />,
   },
 ];
 
