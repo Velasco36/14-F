@@ -78,7 +78,7 @@ const handleNextPage = () => {
               }`}
             >
               {pages[currentPage]?.text && (
-                <p className="text-gray-700 text-lg text-center px-6">
+                <p className="text-gray-700 text-[10px] text-center px-6">
                   {pages[currentPage].text}
                 </p>
               )}
