@@ -50,3 +50,17 @@ body {
 .page.not-flip {
   transform: rotateY(0deg);
 }
+
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
