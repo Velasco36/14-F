@@ -15,13 +15,18 @@ const pages = [
   },
   {
     type: "text",
-    text: "No hay palabras suficientes para describir cuánto te amo. Cada día a tu lado es un regalo que atesoro con todo mi corazón. ❤️",
+    text: "Cada camino que recorremos es una nueva aventura juntos. Estas fotos solo capturan una pequeña parte de todo lo que vivimos, pero el verdadero tesoro está en los momentos que compartimos, en las risas espontáneas, en las miradas cómplices y en cada instante que hace que nuestro viaje valga la pena.",
     image: foto2,
   },
   {
     type: "text",
-    text: "Feliz San Valentín, mi amor. Que este día sea solo uno de muchos llenos de felicidad y amor eterno. 💘",
+    text: "Desde el primer día supe que nuestra historia sería especial, una de esas que se escriben con el corazón y se atesoran con el alma. Página a página, seguimos construyendo este hermoso libro, sin prisa, dejando que el tiempo nos regale más recuerdos, más sonrisas y más capítulos por escribir.",
     image: foto3,
+  },
+  {
+    type: "text",
+    text: "Porque lo mejor de nuestra historia aún está por venir… 💕",
+    image: foto1,
   },
   {
     type: "animation",
@@ -45,12 +50,12 @@ const LoveLetter = () => {
   return (
     <div className="flex justify-center items-center h-screen bg-red-100 p-4">
       <div
-        className="relative book w-full max-w-4xl h-[500px] md:h-[600px] bg-white shadow-lg rounded-lg flex cursor-pointer"
+        className="relative book w-full max-w-4xl h-[500px] md:h-[600px] bg-white shadow-lg flex cursor-pointer rounded-2xl"
         onClick={handleNextPage}
       >
         {currentPage === 0 ? (
           // Primera página (carta personalizada)
-          <div className="w-full h-full flex items-center justify-center p-6">
+          <div className="w-full h-full flex items-center justify-center p-6 rounded-2xl">
             <div className="flex flex-col items-center">
               <h1 className="text-3xl font-bold text-red-600">
                 Para Mi Amor 💖
@@ -64,11 +69,12 @@ const LoveLetter = () => {
           // Páginas siguientes (formato de dos columnas)
           <>
             {/* Página izquierda (imagen) */}
-            <div className="w-1/2 h-full flex items-center justify-center border-r border-gray-400 p-6">
+            <div className="w-1/2 h-full flex items-center justify-center border-r border-gray-400 p-6 rounded-2xl">
               {pages[currentPage]?.image ? (
                 <LazyLoadImage
                   src={pages[currentPage].image}
                   alt="Imagen"
+                  className="rounded-3xl floating"
                   effect="blur" // Efecto de carga (opcional)
                   style={{ width: "100%", height: "auto" }}
                 />
@@ -79,7 +85,7 @@ const LoveLetter = () => {
 
             {/* Página derecha (texto) */}
             <div
-              className={`w-1/2 page h-full flex items-center justify-center p-6 transition-transform duration-600 ${
+              className={`w-1/2 page h-full flex items-center justify-center p-6 transition-transform duration-600  rounded-2xl ${
                 flip ? "flip" : "not-flip"
               }`}
             >
