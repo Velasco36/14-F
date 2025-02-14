@@ -61,9 +61,13 @@ const LoveLetter = () => {
               <h1 className="text-3xl font-bold text-red-600">
                 Para Mi Amor 💖
               </h1>
-              <p className="text-red-400 text-lg mt-2">
-                Una carta especial en San Valentín
+
+              <p className="text-red-400 text-lg mt-8">De: Miguel</p>
+              <p className="text-red-400 text-lg  text-center mt-2">
+                Para: Amhbar Hoyos
               </p>
+
+              <Lottie animationData={animationData} loop={true} />
             </div>
           </div>
         ) : (
