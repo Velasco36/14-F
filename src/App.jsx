@@ -1,26 +1,31 @@
 import Lottie from "lottie-react";
 import { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css"; // Efecto de carga (opcional)
 import animationData from "./assets/animate/Animation-14F.json";
+import foto1 from "./assets/img/01.jpg";
+import foto2 from "./assets/img/02.jpg";
+import foto3 from "./assets/img/03.jpg";
 
 const pages = [
   {
     type: "text",
     text: "Desde el primer día que te vi, supe que había encontrado a alguien especial. Eres mi alegría, mi paz y mi más dulce inspiración. 💕",
-    image: "https://source.unsplash.com/400x400/?love,couple",
+    image: foto1,
   },
   {
     type: "text",
     text: "No hay palabras suficientes para describir cuánto te amo. Cada día a tu lado es un regalo que atesoro con todo mi corazón. ❤️",
-    image: "https://source.unsplash.com/400x400/?heart,romance",
+    image: foto2,
   },
   {
     type: "text",
     text: "Feliz San Valentín, mi amor. Que este día sea solo uno de muchos llenos de felicidad y amor eterno. 💘",
-    image: "https://source.unsplash.com/400x400/?valentine,roses",
+    image: foto3,
   },
   {
     type: "animation",
-    text: "te amo mucho feliz dia  💘",
+    text: "Te amo mucho, feliz día 💘",
     content: <Lottie animationData={animationData} loop={true} />,
   },
 ];
@@ -29,14 +34,14 @@ const LoveLetter = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [flip, setFlip] = useState(false);
 
-const handleNextPage = () => {
-  setFlip(true);
-  setTimeout(() => {
-    // Cambiar a la siguiente página, reiniciando cuando se llega al final
-    setCurrentPage((prevPage) => (prevPage + 1) % pages.length);
-    setFlip(false);
-  }, 600); // tiempo que dura la animación
-};
+  const handleNextPage = () => {
+    setFlip(true);
+    setTimeout(() => {
+      setCurrentPage((prevPage) => (prevPage + 1) % pages.length);
+      setFlip(false);
+    }, 600); // tiempo que dura la animación
+  };
+
   return (
     <div className="flex justify-center items-center h-screen bg-red-100 p-4">
       <div
@@ -61,10 +66,11 @@ const handleNextPage = () => {
             {/* Página izquierda (imagen) */}
             <div className="w-1/2 h-full flex items-center justify-center border-r border-gray-400 p-6">
               {pages[currentPage]?.image ? (
-                <img
+                <LazyLoadImage
                   src={pages[currentPage].image}
-                  alt="Imagen de amor"
-                  className="w-64 h-64 rounded-lg shadow-md"
+                  alt="Imagen"
+                  effect="blur" // Efecto de carga (opcional)
+                  style={{ width: "100%", height: "auto" }}
                 />
               ) : (
                 pages[currentPage]?.content
