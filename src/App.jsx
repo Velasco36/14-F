@@ -3,9 +3,10 @@ import { useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css"; // Efecto de carga (opcional)
 import animationData from "./assets/animate/Animation-14F.json";
-import foto1 from "./assets/img/01.jpg";
-import foto2 from "./assets/img/02.jpg";
+import foto1 from "./assets/img/06.jpg";
+import foto2 from "./assets/img/04.jpg";
 import foto3 from "./assets/img/03.jpg";
+import foto4 from "./assets/img/05.jpg";
 
 const pages = [
   {
@@ -31,7 +32,7 @@ const pages = [
   {
     type: "animation",
     text: "Te amo mucho, feliz día 💘",
-    content: <Lottie animationData={animationData} loop={true} />,
+    image: foto4,
   },
 ];
 
